@@ -1,0 +1,23 @@
+﻿<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+@if (TempData["SuccessDate"] != null)
+{
+    <h4 style="color:aqua">
+        @TempData["SuccessDate"]
+    </h4>
+    <script type="text/javascript">
+        toastr.success('@TempData["SuccessDate"]', 'Successfuly')
+    </script>
+}
+
+@if (TempData["ErrorDate"] != null)
+{
+    <h4 style="color:red">
+        @TempData["ErrorDate"]
+    </h4>
+    <script type="text/javascript">
+        toastr.error('@TempData["ErrorDate"]', 'Error')
+    </script>
+}
